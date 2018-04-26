@@ -12,4 +12,6 @@ Foursquare
 Eventbrite
 
 ##This is a test
-Kenzie's pull request 
+Kenzie's pull request
+This is a part of the new branch test - Kenzie
+

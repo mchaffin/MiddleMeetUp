@@ -8,11 +8,11 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <style>
-    #map{
-      height:400px;
-      width:100%;
-    }
-  </style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
     <title>Middle Meetup Map</title>
 </head>
 
@@ -22,13 +22,16 @@
             <div class="form-group">
                 <label for="address1">Address One:</label>
                 <input type="text" id="address1">
+                <input id="origin" name="origin" required="" type="hidden" />
             </div>
             <div class="form-group">
                 <label for="address2">Address Two:</label>
                 <input type="text" id="address2">
+                <input id="destination" name="destination" required="" type="hidden" />
             </div>
             <button type="submit" class="btn btn-primary" id="Run">Submit</button>
         </form>
+<<<<<<< HEAD
   <h1>Google Directions Map</h1>
   <div id="directionsMap"></div>
     <!-- Start Script -->
@@ -37,6 +40,19 @@
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s&callback=initMap">
   </script>
+=======
+        <h1>Google Directions Map</h1>
+        <div id="directionsMap"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s">
+        </script>
+        <!-- end of the url &callback=initMap -->
+        <!-- jQuery link -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="assets/javascript/script.js"></script>
+>>>>>>> 4810d82d6905d8bc7c4aa57b1a72b84c2b7de883
     </div>
 </body>
 

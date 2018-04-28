@@ -16,5 +16,5 @@ Kenzie's pull request
 This is a part of the new branch test - Kenzie
 
 ## Wireframe 
-![wirefrane](/images/wireframe.png)
+![wirefrane](assets/images/wireframe.png)
 Format: ![wireframe](url)

@@ -12,7 +12,7 @@ var database = firebase.database();
 var place1 = "";
 var place2 = "";
 
-$(".btn").on('click', function(event){
+$(".btn").on('click', function (event) {
     event.preventDefault();
 
     place1 = $("#address1").val().trim();
@@ -26,5 +26,6 @@ $(".btn").on('click', function(event){
     };
 
     database.ref().push(location);
+
 
 });

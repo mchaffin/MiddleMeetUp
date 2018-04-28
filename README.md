@@ -20,6 +20,5 @@ This is a Test Pull Request for Nate
 
 
 ## Wireframe 
-![wirefrane](/images/wireframe.png)
-
+![wirefrane](assets/images/wireframe.png)
 

@@ -26,6 +26,4 @@ $(".btn").on('click', function (event) {
     };
 
     database.ref().push(location);
-
-
 });

@@ -23,6 +23,7 @@ function initMap() {
       zoom: 7,
       center: {lat: 41.85, lng: -87.65}
     });
+    
     directionsDisplay.setMap(map);
 
     var onClickHandler = function(event) {
@@ -53,6 +54,8 @@ function initMap() {
       travelMode: 'DRIVING'
     }, function(response, status) {
       if (status === 'OK') {
+        console.log("Google Directions API JSON Response: ");
+        console.log(response);
         directionsDisplay.setDirections(response);
       } else {
         window.alert('Directions request failed due to ' + status);

@@ -54,8 +54,15 @@ function initMap() {
       travelMode: 'DRIVING'
     }, function(response, status) {
       if (status === 'OK') {
+
         console.log("Google Directions API JSON Response: ");
         console.log(response);
+
+        console.log("place_id of Address One: ");
+        console.log(response.geocoded_waypoints["0"].place_id);
+        console.log("place_id of Address Two: ");
+        console.log(response.geocoded_waypoints["1"].place_id);
+
         directionsDisplay.setDirections(response);
       } else {
         window.alert('Directions request failed due to ' + status);

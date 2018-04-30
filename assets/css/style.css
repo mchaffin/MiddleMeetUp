@@ -1,5 +1,4 @@
- /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
+/* Always set the map height explicitly to define the size of the div * element that contains the map. */
        #directionsMap {
         height: 100%;
         min-height: 1000px;
@@ -23,3 +22,4 @@
         line-height: 30px;
         padding-left: 10px;
       }
+

@@ -7,7 +7,7 @@
 
 
 
-function midPtCalc(ptA, ptB){
+function midPtCalc(ptA, ptB) {
     //Initialize empty Lat and Lng for MidPt
     var midPtLat;
     var midPtLng;
@@ -23,10 +23,10 @@ function midPtCalc(ptA, ptB){
     var ptBLng = ptB.lng;
 
     //Calc Simple Avg of Coordinates
-    midPtLat = (ptALat + ptBLat)/2;
-    midPtLng = (ptALng + ptBLng)/2;
-    
-    var midPt = {lat: midPtLat, lng: midPtLng};
+    midPtLat = (ptALat + ptBLat) / 2;
+    midPtLng = (ptALng + ptBLng) / 2;
+
+    var midPt = { lat: midPtLat, lng: midPtLng };
 
     console.log(midPt);
     return midPt;
@@ -34,9 +34,9 @@ function midPtCalc(ptA, ptB){
 
 function extractCoordinates(place_idA, place_idB) {
 
-    var queryURLA = 'https://maps.googleapis.com/maps/api/geocode/json?place_id='+ place_idA +'&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
-    
-    var queryURLB = 'https://maps.googleapis.com/maps/api/geocode/json?place_id='+ place_idB +'&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
+    var queryURLA = 'https://maps.googleapis.com/maps/api/geocode/json?place_id=' + place_idA + '&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
+
+    var queryURLB = 'https://maps.googleapis.com/maps/api/geocode/json?place_id=' + place_idB + '&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
 
     //console.log(queryURL);
 
@@ -48,7 +48,7 @@ function extractCoordinates(place_idA, place_idB) {
     }).then(function (response) {
         // setting coordinates to JSON response "location" from callback lat, lng
         var coordinatesA = response.results[0].geometry.location;
-        
+
         //Second AJAX Call
         $.ajax({
             type: "GET",
@@ -58,12 +58,12 @@ function extractCoordinates(place_idA, place_idB) {
             var coordinatesB = response.results[0].geometry.location;
 
             midPtCalc(coordinatesA, coordinatesB);
-         
+
         });
-    //return response.results[0].geometry.location;;
+        //return response.results[0].geometry.location;;
     });
 
 
-    
+
 }; // End extractCoordinates();
 

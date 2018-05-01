@@ -24,6 +24,37 @@
 </head>
 
 <body>
+    <!-- start nav -->
+    <nav class="navbar is-fixed-top">
+        <div class="container">
+            <span class="navbar-burger burger" data-target="navbarMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item is-size-6 has-text-white" data-anchor="home">
+                    Home
+                </a>
+                <a class="navbar-item is-size-6 has-text-white" data-anchor="FAQ">
+                    FAQ
+                </a>
+                <a class="navbar-item is-size-6 has-text-white" data-anchor="sign up">
+                    Sign Up
+                </a>
+                <a class="navbar-item is-size-6 has-text-white" data-anchor="help">
+                    Help
+                </a>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- end nav -->
+
+    <!--hello world-->
+
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
@@ -36,6 +67,9 @@
             </div>
         </div>
     </section>
+
+
+    <!--start content-->
     <div class="container">
         <div class="columns">
             <div class="column is-half">
@@ -43,11 +77,11 @@
                 <form>
                     <div class="form-group">
                         <label for="address1">Address One:</label>
-                        <input class="input is-rounded" type="text"id="address1">
+                        <input class="input is-rounded" type="text" id="address1">
                     </div>
                     <div class="form-group">
                         <label for="address2">Address Two:</label>
-                        <input class="input is-rounded" type="text"id="address2">
+                        <input class="input is-rounded" type="text" id="address2">
                     </div>
                     <br>
                     <button type="submit" class="button is-link is-focused" id="Run">Submit</button>
@@ -55,6 +89,7 @@
                 <br>
                 <div id="middleMap"></div>
             </div>
+            <!--results-->
             <div class="column is-half">
                 <h2 class="is-size-4">Meetup Spotz</h2>
                 <br>

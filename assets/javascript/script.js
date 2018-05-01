@@ -12,6 +12,8 @@ var database = firebase.database();
 var place1 = "";
 var place2 = "";
 
+
+
 $(".btn").on('click', function (event) {
     event.preventDefault();
 

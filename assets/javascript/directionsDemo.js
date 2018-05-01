@@ -61,7 +61,7 @@ function initMap(){
         //icon:props.iconImage
       });
 
-      // Check for customicon
+      // Check for custom icon
       if(props.iconImage){
         // Set icon image
         marker.setIcon(props.iconImage);

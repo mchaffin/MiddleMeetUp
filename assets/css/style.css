@@ -1,5 +1,5 @@
 /* Always set the map height explicitly to define the size of the div * element that contains the map. */
-       #directionsMap {
+       #middleMap {
         height: 50%;
         min-height: 500px;
       }
@@ -21,5 +21,23 @@
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
         padding-left: 10px;
+      }
+
+      .hero {
+       margin: 0px 0px 15px 0px;
+       padding-bottom: 20px;
+      }
+
+      .title {
+        font-family: 'Arvo', serif;
+        font-size: 35px;
+      }
+
+      .subtitle {
+        font-family: 'Abel', sans-serif;
+      }
+
+      .container {
+        font-family: 'Abel', sans-serif;
       }
 

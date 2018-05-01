@@ -12,6 +12,9 @@ function midPtCalc(ptA, ptB){
     var midPtLat;
     var midPtLng;
 
+    console.log("Input Coords");
+    console.log(ptA, ptB);
+
     //Extract Lat and Lng from input pts
     var ptALat = ptA.lat;
     var ptBLat = ptB.lat;
@@ -24,5 +27,43 @@ function midPtCalc(ptA, ptB){
     midPtLng = (ptALng + ptBLng)/2;
     
     var midPt = {lat: midPtLat, lng: midPtLng};
+
+    console.log(midPt);
     return midPt;
 };//End midPtCalc();
+
+function extractCoordinates(place_idA, place_idB) {
+
+    var queryURLA = 'https://maps.googleapis.com/maps/api/geocode/json?place_id='+ place_idA +'&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
+    
+    var queryURLB = 'https://maps.googleapis.com/maps/api/geocode/json?place_id='+ place_idB +'&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
+
+    //console.log(queryURL);
+
+    //First AJAX Call
+    $.ajax({
+        type: "GET",
+        url: queryURLA
+
+    }).then(function (response) {
+        // setting coordinates to JSON response "location" from callback lat, lng
+        var coordinatesA = response.results[0].geometry.location;
+        
+        //Second AJAX Call
+        $.ajax({
+            type: "GET",
+            url: queryURLB
+
+        }).then(function (response) {
+            var coordinatesB = response.results[0].geometry.location;
+
+            midPtCalc(coordinatesA, coordinatesB);
+         
+        });
+    //return response.results[0].geometry.location;;
+    });
+
+
+    
+}; // End extractCoordinates();
+

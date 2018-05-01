@@ -27,7 +27,7 @@ function searchGooglePlaces(lat, lon) {
             placeDiv.append("<header class='card-header'><p class='card-header-title'>" + result.name + "</p><p class='title is-6'>" + result.types);
             //adds other content
             placeDiv.append("<div class='card-content'><div class='content'>Rating: " + result.rating + "<br>Address: " + result.formatted_address + "</div></div>");
-            $("#google-places-here").append(placeDiv);
+            $("#suggestions").append(placeDiv);
         }
     });    
  }

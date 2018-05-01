@@ -62,8 +62,8 @@ function extractCoordinates(place_idA, place_idB) {
         });
     //return response.results[0].geometry.location;;
     });
-
-
     
 }; // End extractCoordinates();
+
+
 

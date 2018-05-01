@@ -20,8 +20,9 @@ function initMap() {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('directionsMap'), {
-      zoom: 7,
-      center: {lat: 41.85, lng: -87.65}
+      zoom: 12,
+      //Calculated midpoint ccords btw Mpls & St Paul Mn
+      center: {lat: 44.96, lng: -93.17}
     });
     
     directionsDisplay.setMap(map);

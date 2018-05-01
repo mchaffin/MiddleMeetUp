@@ -1,8 +1,7 @@
-function searchGooglePlaces(searchString) {
+function searchGooglePlaces(lat, lon) {
     //var searchString = searchString;
     // Constructing a queryURL using the search term   
-    var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" +
-    searchString + "&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4";
+    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=10&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4";
 
     // Performing an AJAX request with the queryURL
     $.ajax({

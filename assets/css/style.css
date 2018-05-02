@@ -2,6 +2,8 @@
        #middleMap {
         height: 50%;
         min-height: 500px;
+        border: solid 10px;
+    
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -24,8 +26,9 @@
       }
 
       .hero {
-       margin: 0px 0px 15px 0px;
-       padding-bottom: 20px;
+       margin: 0px 0px 40px 0px;
+       padding-bottom: 1px;
+       padding-top: 60px;
       }
 
       .title {
@@ -37,7 +40,25 @@
         font-family: 'Abel', sans-serif;
       }
 
-      .container {
-        font-family: 'Abel', sans-serif;
+     .container {
+      font-family: 'Abel', sans-serif;
       }
+
+      .navbar {
+        font-family: 'Abel', sans-serif;
+        opacity: .5;
+        background: rgb(70, 80, 78);
+        border-bottom-color: #00D1B2;
+      }
+
+      .footer {
+        padding: 20px;
+        margin-top: 100px;
+        color: rgb(110, 109, 109);
+        
+      }
+
+
+
+   
 

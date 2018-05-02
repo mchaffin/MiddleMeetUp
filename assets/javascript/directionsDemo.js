@@ -45,7 +45,7 @@ function initMap(){
       {
         coords:{lat:42.7762,lng:-71.0773}
       }
-    ];
+    ];//End markers array
 
     // Loop through markers
     for(var i = 0;i < markers.length;i++){
@@ -59,9 +59,9 @@ function initMap(){
         position:props.coords,
         map:map,
         //icon:props.iconImage
-      });
+      });//End
 
-      // Check for customicon
+      // Check for custom icon
       if(props.iconImage){
         // Set icon image
         marker.setIcon(props.iconImage);
@@ -77,5 +77,5 @@ function initMap(){
           infoWindow.open(map, marker);
         });
       }
-    }
-  }
+    };//End addMarker()
+  };//End initMap()

@@ -1,5 +1,4 @@
-/// Firebase 
-
+///////// ** Firebase Configuration **//////////////
 var config = {
   apiKey: "AIzaSyBIaYZCktWCryF8cMhxK-XUNzIJibtquU0",
   authDomain: "middlemeetup-a2868.firebaseapp.com",
@@ -9,22 +8,36 @@ var config = {
   messagingSenderId: "482753535895"
 };
 firebase.initializeApp(config);
-
 var database = firebase.database();
-// Global variable
+///////// ** End Firebase Configuration **//////////////
+
+
+
+// Global variables
+var addressesArr = [];
+var markersArr = [];
 var origin = "";
 var destination = "";
+var $middleMap = $("#middleMap");
 
 /// Google Directions 
 function initMap() {
+
+    //Virtual Directions Service
     var directionsService = new google.maps.DirectionsService;
+    //Virtual Directions Renderer
     var directionsDisplay = new google.maps.DirectionsRenderer;
-    var map = new google.maps.Map(document.getElementById('directionsMap'), {
-      zoom: 7,
-      center: {lat: 41.85, lng: -87.65}
+
+
+    var middleMap = new google.maps.Map(document.getElementById('middleMap'), 
+    
+    {
+      zoom: 12,
+      //Calculated midpoint coords btw Mpls & St Paul Mn
+      center: {lat: 44.96, lng: -93.17}
     });
     
-    directionsDisplay.setMap(map);
+    directionsDisplay.setMap(middleMap);
 
     var onClickHandler = function(event) {
         event.preventDefault();
@@ -36,7 +49,7 @@ function initMap() {
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       // Get origin nd destination 
-      console.log("Getting here");
+      
       origin = document.getElementById('address1').value;
       destination = document.getElementById('address2').value;
 
@@ -47,6 +60,8 @@ function initMap() {
         dateAdded: firebase.database.ServerValue.TIMESTAMP
       });
 
+
+     //Utilizes .route in directionsService to perform AJAX call 
     directionsService.route({
       // Save a call to DOM use origin and destination
       origin: document.getElementById('address1').value,
@@ -60,8 +75,15 @@ function initMap() {
 
         console.log("place_id of Address One: ");
         console.log(response.geocoded_waypoints["0"].place_id);
+
+        var place_id0 = response.geocoded_waypoints["0"].place_id;
+
         console.log("place_id of Address Two: ");
         console.log(response.geocoded_waypoints["1"].place_id);
+        var place_id1 = response.geocoded_waypoints["1"].place_id;
+
+        addressesArr.push(place_id0,place_id1);
+
 
         directionsDisplay.setDirections(response);
       } else {

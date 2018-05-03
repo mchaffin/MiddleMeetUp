@@ -1,3 +1,9 @@
+jQuery.ajaxPrefilter(function(options) {
+    if (options.crossDomain && jQuery.support.cors) {
+        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+  });
+
 function searchGooglePlaces(midpoint) {
     //var searchString = searchString;
     // Constructing a queryURL using the search term 

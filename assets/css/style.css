@@ -69,6 +69,15 @@
         font-family: 'Abel', sans-serif;
       }
 
+      .card {
+        border-radius: 15px;
+        padding: 15px;
+      }
+
+      #right-side {
+        column-count: 2;
+      }
+
 
 
    

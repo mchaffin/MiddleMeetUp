@@ -32,9 +32,9 @@ function searchGooglePlaces(midpoint) {
             // //adds image
             placeDiv.append("<div class='card-image'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + result.photos[0].photo_reference + "&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4' alt='place image'></div>");
             //adds name and type
-            placeDiv.append("<header class='card-header'><p class='card-header-title'>" + result.name + "</p><p class='title is-6'>" + result.types);
+            placeDiv.append("<div class = 'media-content'><p class='title is-6'>" + result.name + "</p><p class='subtitle is-6'>");
             //adds other content
-            placeDiv.append("<div class='card-content'><div class='content'>Rating: " + result.rating + "<br>Address: " + result.formatted_address + "</div></div>");
+            placeDiv.append("<div class='content'><div class='content'>Rating: " + result.rating + "<br>Address: " + result.formatted_address + "</div></div></div>");
             $("#suggestions").append(placeDiv);
         }
     });    

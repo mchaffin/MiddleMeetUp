@@ -2,7 +2,7 @@
        #middleMap {
         height: 50%;
         min-height: 500px;
-        border: solid 10px;
+        border: solid 2px;
     
       }
       /* Optional: Makes the sample page fill the window. */
@@ -55,7 +55,18 @@
         padding: 20px;
         margin-top: 100px;
         color: rgb(110, 109, 109);
-        
+      }
+
+      button {
+        font-family: 'Abel', sans-serif;
+      }
+
+      option {
+        font-family: 'Abel', sans-serif;
+      }
+
+      select {
+        font-family: 'Abel', sans-serif;
       }
 
 

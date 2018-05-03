@@ -60,7 +60,7 @@ function extractCoordinates(place_idA, place_idB) {
             var coordinatesB = response.results[0].geometry.location;
 
             midPtCalc(coordinatesA, coordinatesB);
-
+            searchGooglePlaces(midpointCoord);
         });
         //return response.results[0].geometry.location;;
     });

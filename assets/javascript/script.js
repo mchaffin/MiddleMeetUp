@@ -28,15 +28,6 @@ $(".btn").on('click', function (event) {
     };
 
     database.ref().push(location);
+
+
 });
-
-// Fct drawMarkers consumes two arguments: an initialized map rendered map and an array of objs with containing lat/lng for each of the markers to be drawn, then executes darwing those markers on the given map
-function drawMarkers(map, markerArr){
-
-    for(var i = 0;i < markers.length;i++){
-        // Add marker
-        addMarker(markers[i]);
-      }
-
-
-};//End drawMarkers()

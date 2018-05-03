@@ -1,7 +1,9 @@
 function searchGooglePlaces(lat, lon) {
     //var searchString = searchString;
-    // Constructing a queryURL using the search term   
-    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=10&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4";
+    // Constructing a queryURL using the search term 
+    var lat = midpointCoord.coord.lat;
+    var lon = midpointCoord.coord.lng;
+    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=1000&type=bar&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4";
 
     // Performing an AJAX request with the queryURL
     $.ajax({
@@ -28,6 +30,9 @@ function searchGooglePlaces(lat, lon) {
             //adds other content
             placeDiv.append("<div class='card-content'><div class='content'>Rating: " + result.rating + "<br>Address: " + result.formatted_address + "</div></div>");
             $("#suggestions").append(placeDiv);
+
+            //pushes coordinates to array
+            
         }
     });    
  }

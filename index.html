@@ -13,6 +13,7 @@
 
 <body>
     <div class="container">
+<<<<<<< Updated upstream
         <section class="hero">
             <div class="hero-body">
                 <div class="container">
@@ -22,6 +23,67 @@
                     <h2 class="subtitle">
                         Find the middle ground.
                     </h2>
+=======
+        <div class="columns">
+            <div class="column is-half">
+                <h5 class="is-size-4">Input Location</h5>
+                <form>
+                    <div class="form-group">
+                        <label for="myMidpt">Save Midpoint</label>
+                        <input class="input is-rounded" type="text" id="myMidpt" placeholder="My Midpoint">
+                    </div>
+                    <div class="form-group">
+                        <label for="address1">Address One:</label>
+                        <input class="input is-rounded" type="text" id="address1">
+                    </div>
+                    <div class="form-group">
+                        <label for="address2">Address Two:</label>
+                        <input class="input is-rounded" type="text" id="address2">
+                    </div>
+                    <div class="form-group" id="description">
+                        <label for="description">Description</label>
+                        <input class="input is-rounded" type="text" id="midPtDescription" placeholder="My midpoint to meet Liam N.">
+                    </div>
+                    <br>
+                    <div id="categories">
+                        <div class="select is-rounded">
+                            <select id="type">
+                                <option>Choose Category</option>
+                                <option value="park">Park</option>
+                                <option value="restaurant">Restaurant</option>
+                                <option value="bar">Bar</option>
+                                <option value="night-club">Night Club</option>
+                                <option value="casino">Casino</option>
+                                <option value="courthouse">Courthouse</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="radius">
+                        <div class="select is-rounded">
+                            <select id="radius">
+                                <option>Choose Radius</option>
+                                <option val="5">5</option>
+                                <option val="10">10</option>
+                                <option val="15">15</option>
+                                <option val="20">20</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="button is-link is-focused is-rounded" id="Run">Submit</button>
+                </form>
+                <br>
+                <div id="middleMap"></div>
+            </div>
+            <!--results-->
+            <div class="column is-half">
+                <h2 class="is-size-4">Meetup Spotz</h2>
+
+                <div id="suggestions">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, perspiciatis quae! Laborum, magni beatae distinctio quisquam
+                    in perspiciatis dolores eum accusamus corrupti iure molestias voluptate eaque itaque et quas esse.
+                    <!-- insert place cards here  -->
+>>>>>>> Stashed changes
                 </div>
             </div>
         </section>
@@ -61,7 +123,7 @@
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <!-- Base Script -->
-    <!-- <script src="assets/javascript/script.js"></script> -->
+    <script src="assets/javascript/script.js"></script>
     <!-- Google Directions Script -->
     <script src="assets/javascript/google-dir.js"></script>
 

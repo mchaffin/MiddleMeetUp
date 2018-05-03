@@ -25,11 +25,11 @@
         padding-left: 10px;
       }
 
-      .hero {
+      /* .hero {
        margin: 0px 0px 40px 0px;
        padding-bottom: 1px;
        padding-top: 60px;
-      }
+      } */
 
       .title {
         font-family: 'Arvo', serif;
@@ -42,15 +42,13 @@
         color: rgb(105, 105, 105);
       }
 
-     .container {
-      font-family: 'Abel', sans-serif;
-      }
+
 
       .navbar {
         font-family: 'Abel', sans-serif;
-        opacity: .5;
-        background: rgb(70, 80, 78);
-        border-bottom-color: #00D1B2;
+        background-color: rgba(0,0,0,0);
+        border-bottom-color: rgba(0,0,0,0);
+        
       }
 
       .footer {

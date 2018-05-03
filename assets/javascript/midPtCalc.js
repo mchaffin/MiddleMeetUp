@@ -26,13 +26,15 @@ function midPtCalc(ptA, ptB) {
     midPtLat = (ptALat + ptBLat) / 2;
     midPtLng = (ptALng + ptBLng) / 2;
 
-    var midPt = { lat: midPtLat, lng: midPtLng };
+    midpointCoord = { lat: midPtLat, lng: midPtLng };
 
-    console.log(midPt);
-    return midPt;
+    console.log(midpointCoord);
+    // return midpointCoord;
 };//End midPtCalc();
 
 function extractCoordinates(place_idA, place_idB) {
+    place_idA = place_idA.toString();
+    place_idB = place_idB.toString();
 
     var queryURLA = 'https://maps.googleapis.com/maps/api/geocode/json?place_id=' + place_idA + '&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
 

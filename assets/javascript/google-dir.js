@@ -19,6 +19,10 @@ var markersArr = [];
 var origin = "";
 var destination = "";
 var $middleMap = $("#middleMap");
+var place_id0 = "";
+var place_id1 = "";
+var midpointCoord = {};
+
 
 /// Google Directions 
 function initMap() {
@@ -76,14 +80,16 @@ function initMap() {
         console.log("place_id of Address One: ");
         console.log(response.geocoded_waypoints["0"].place_id);
 
-        var place_id0 = response.geocoded_waypoints["0"].place_id;
+        place_id0 = response.geocoded_waypoints["0"].place_id;
 
         console.log("place_id of Address Two: ");
         console.log(response.geocoded_waypoints["1"].place_id);
-        var place_id1 = response.geocoded_waypoints["1"].place_id;
+        place_id1 = response.geocoded_waypoints["1"].place_id;
 
         addressesArr.push(place_id0,place_id1);
 
+        //calls function to extract coordinates
+        extractCoordinates(place_id0, place_id1);
 
         directionsDisplay.setDirections(response);
       } else {

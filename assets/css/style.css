@@ -10,7 +10,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
-         font-family: 'Abel', sans-serif;
+       
       }
       /* #floating-panel {
         position: absolute;
@@ -33,7 +33,7 @@
       }
 
       .subtitle {
-        font-family: 'Abel', sans-serif;
+        font-family: 'Arsenal', sans-serif;
         color: rgb(105, 105, 105);
       }
 
@@ -47,13 +47,14 @@
         top: 0;
         width: 100%;
         background-color: rgb(124, 65, 65);
-        font-family: 'Abel', sans-serif;
+        font-family: 'Arsenal', sans-serif;
         z-index: 1000;
     }
 
     .nav1 {
       z-index: 100 !important;
       opacity: 1;
+      margin-bottom: 50px;
     }
     
     li {
@@ -89,14 +90,14 @@
     }
       .footer {
         padding: 20px;
-        margin-top: 100px;
+        margin-top: 50px;
         color: rgb(110, 109, 109);
         height: 50px;
         
       }
 
       button, option, select {
-        font-family: 'Abel', sans-serif;
+        font-family: 'Arsenal', sans-serif;
       }
 
       .card {
@@ -139,18 +140,15 @@
         font-family: 'Arvo', serif;
       }
 
-      .img-text-mid {
-        position: absolute;
-        top: 25%;
-        left: 38%;
-        transform: translate(-50%, -50%);
-        font-family: 'Arvo', serif;
-        color: rgb(105, 105, 105);
+  
+      .container {
+        width: 70%;
       }
 
-      /* .container {
-        font-family: 'Abel', sans-serif;
-      } */
+      #about {
+        font-family: 'Arvo', serif;
+       letter-spacing: -1px;
+      }
 
 
 

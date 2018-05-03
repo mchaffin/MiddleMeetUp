@@ -34,10 +34,12 @@
       .title {
         font-family: 'Arvo', serif;
         font-size: 35px;
+        color: rgb(105, 105, 105);
       }
 
       .subtitle {
         font-family: 'Abel', sans-serif;
+        color: rgb(105, 105, 105);
       }
 
      .container {
@@ -93,6 +95,22 @@
         border-radius: 10px; 
         font-size: 18px; 
     }
+
+    #meet-img {
+      width: 100%;
+      opacity: .7;
+    }
+
+    
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  font-family: 'Arvo', serif;
+}
+
+
 
 
 

@@ -10,8 +10,9 @@
         height: 100%;
         margin: 0;
         padding: 0;
+         font-family: 'Abel', sans-serif;
       }
-      #floating-panel {
+      /* #floating-panel {
         position: absolute;
         top: 10px;
         left: 25%;
@@ -23,12 +24,6 @@
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
         padding-left: 10px;
-      }
-
-      /* .hero {
-       margin: 0px 0px 40px 0px;
-       padding-bottom: 1px;
-       padding-top: 60px;
       } */
 
       .title {
@@ -42,11 +37,6 @@
         color: rgb(105, 105, 105);
       }
 
-      .nav {
-        font-family: 'Abel', sans-serif;
-        background-color: rgba(0,0,0,0);
-        padding-right: 35px;
-      }
 
       ul {
         list-style-type: none;
@@ -56,6 +46,14 @@
         position: fixed;
         top: 0;
         width: 100%;
+        background-color: rgb(124, 65, 65);
+        font-family: 'Abel', sans-serif;
+        z-index: 1000;
+    }
+
+    .nav1 {
+      z-index: 100 !important;
+      opacity: 1;
     }
     
     li {
@@ -68,32 +66,36 @@
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        /* z-index: 100; */
     }
 
     #left {
       float: left;
       font-family: 'Arvo', serif;
       font-size: 30px;
-      padding: 0px 0px 0px 16px;
       color: rgb(148, 147, 147);
+   
     }
     
-
+    .wrapper {
+      min-height: 100%;
+    
+      /* Equal to height of footer */
+      /* But also accounting for potential margin-bottom of last child */
+      margin-bottom: -50px;
+    }
+    .push {
+      height: 50px;
+    }
       .footer {
         padding: 20px;
         margin-top: 100px;
         color: rgb(110, 109, 109);
+        height: 50px;
+        
       }
 
-      button {
-        font-family: 'Abel', sans-serif;
-      }
-
-      option {
-        font-family: 'Abel', sans-serif;
-      }
-
-      select {
+      button, option, select {
         font-family: 'Abel', sans-serif;
       }
 
@@ -120,25 +122,37 @@
         padding: 15px;
         border-radius: 10px; 
         font-size: 18px; 
-    }
+      }
 
-    #meet-img {
-      width: 100%;
-      opacity: .7;
-    }
+      #meet-img {
+        width: 100%;
+        opacity: .7;
+        z-index: 1;
+      }
 
     
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 80%;
-  transform: translate(-50%, -50%);
-  font-family: 'Arvo', serif;
-}
+      .img-text {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        font-family: 'Arvo', serif;
+      }
 
-.container {
-  font-family: 'Abel', sans-serif;
-}
+      .img-text-mid {
+        position: absolute;
+        top: 25%;
+        left: 38%;
+        transform: translate(-50%, -50%);
+        font-family: 'Arvo', serif;
+        color: rgb(105, 105, 105);
+      }
+
+      /* .container {
+        font-family: 'Abel', sans-serif;
+      } */
+
+
 
 
 

@@ -26,7 +26,7 @@ function midPtCalc(ptA, ptB) {
     midPtLat = (ptALat + ptBLat) / 2;
     midPtLng = (ptALng + ptBLng) / 2;
 
-    midpointCoord = { lat: midPtLat, lng: midPtLng };
+    midpointCoord = { coord: {lat: midPtLat, lng: midPtLng }};
 
     console.log(midpointCoord);
     // return midpointCoord;

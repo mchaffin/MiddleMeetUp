@@ -1,0 +1,10 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+     
+ }
+
+ .about {
+     color: white;
+     font-family: 'Arsenal', sans-serif;
+ }

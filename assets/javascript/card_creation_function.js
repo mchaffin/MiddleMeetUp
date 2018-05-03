@@ -9,7 +9,7 @@ function searchGooglePlaces(midpoint) {
     // Constructing a queryURL using the search term 
     var lat = midpointCoord.lat;
     var lon = midpointCoord.lng;
-    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=10&type=bar&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4";
+    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=1000&type=bar&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4";
 
     // Performing an AJAX request with the queryURL
     $.ajax({

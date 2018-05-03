@@ -42,14 +42,42 @@
         color: rgb(105, 105, 105);
       }
 
-
-
-      .navbar {
+      .nav {
         font-family: 'Abel', sans-serif;
         background-color: rgba(0,0,0,0);
-        border-bottom-color: rgba(0,0,0,0);
-        
+        padding-right: 35px;
       }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    
+    li {
+        float: right;
+    }
+    
+    li a {
+        display: block;
+        color: rgb(148, 147, 147);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #left {
+      float: left;
+      font-family: 'Arvo', serif;
+      font-size: 30px;
+      padding: 0px 0px 0px 16px;
+      color: rgb(148, 147, 147);
+    }
+    
 
       .footer {
         padding: 20px;
@@ -106,6 +134,10 @@
   left: 80%;
   transform: translate(-50%, -50%);
   font-family: 'Arvo', serif;
+}
+
+.container {
+  font-family: 'Abel', sans-serif;
 }
 
 

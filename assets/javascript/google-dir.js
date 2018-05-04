@@ -21,57 +21,55 @@ var place_id0 = "";
 var place_id1 = "";
 var midpointCoord = {};
 
-/// Google Directions 
+/// FUNCTION - InitMap ///
+// Google Directions // 
 function initMap() {
   //Virtual Directions Service
   var directionsService = new google.maps.DirectionsService;
   //Virtual Directions Renderer
   var directionsDisplay = new google.maps.DirectionsRenderer;
 
+  // Create new Google Map object
   var middleMap = new google.maps.Map(document.getElementById('middleMap'),
-
     {
       zoom: 12,
       //Calculated midpoint coords btw Mpls & St Paul Mn
       center: { lat: 44.96, lng: -93.17 }
     });
 
+  // call this now  
   directionsDisplay.setMap(middleMap);
 
+  // // Click handler
   var onClickHandler = function (event) {
     event.preventDefault();
     calculateAndDisplayRoute(directionsService, directionsDisplay);
   };
   document.getElementById('Run').addEventListener('click', onClickHandler);
 
-  
   // Create new default marker
   var midPtMarker = new google.maps.Marker({
     position:{ lat: 44.96, lng: -93.17 },
-    label:"M",
+    label:"P",
     animation: google.maps.Animation.DROP,
-    content: '<h1>Howdy!</h1>',
-    title: "I'm the Midpoint!",
     map: middleMap
   });
 
   var infowindow = new google.maps.InfoWindow({
-    content: "<h1>Howdy!</h1><p>I'm the Middle Point between Minneapolis and St. Paul MN</p>"
+    content: "<h1>Howdy!</h1><p>I'm your first CommonGround Point.</p>"
   });
 
+  // Add event listener
   midPtMarker.addListener('click', function() {
     infowindow.open(middleMap, midPtMarker);
   });
-  
-  console.log(midPtMarker);
-  
-}//End initMap()
+}
+/// END FUNCTION InitMap() ///
 
 
-
+/// FUNCTION CALL TO Google Directions ///
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-  // Get origin nd destination 
-
+  // Get origin and destination 
   origin = document.getElementById('address1').value;
   destination = document.getElementById('address2').value;
 
@@ -81,7 +79,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     destination: destination,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
-
 
   //Utilizes .route in directionsService to perform AJAX call 
   directionsService.route({
@@ -112,25 +109,20 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
       directionsDisplay.setDirections(response);
 
-      
     } else {
       window.alert('Directions request failed due to ' + status);
     }
   });
 }//End calculateAndDisplayRoute()
 
-// Fct drawMarkers consumes two arguments: an initialized map rendered map and an array of objs with containing lat/lng for each of the markers to be drawn, then executes drawing those markers on the given map
+// FUNCTION DrawMarkers consumes two arguments: an initialized map rendered map and an array of objs with containing lat/lng for each of the markers to be drawn, then executes drawing those markers on the given map
 function drawMarkers(map, markerArr) {
-  
   for (var i = 0; i < markersArr.length; i++) {
     // Add marker
     addMarker(markersArr[i]);
   }
-
   function addMarker(props){
-    var marker = new google.maps.Marker({ position:props.coord, map:map});
-
-    
+    var marker = new google.maps.Marker({ position:props.coord, map:map});    
   }
-
-};//End drawMarkers()
+};
+/// END DrawMarkers() ///

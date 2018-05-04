@@ -5,11 +5,11 @@ var map;
 var markers = [];
 
 function initMap() {
-    var haightAshbury = {lat: 37.769, lng: -122.446};
+    var twinCites = { lat: 44.96, lng: -93.17 };
 
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
-        center: haightAshbury,
+        center: twinCites,
         mapTypeId: 'terrain'
     });
 
@@ -19,7 +19,7 @@ function initMap() {
     });
 
     // Adds a marker at the center of the map.
-    addMarker(haightAshbury);
+    addMarker(twinCites);
 }
 
 // Adds a marker to the map and push to the array.

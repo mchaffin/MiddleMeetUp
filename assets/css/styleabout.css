@@ -1,4 +1,4 @@
-body {
+/* body {
     background-image: url("../images/background.jpg");
     background-size: cover;
      
@@ -7,4 +7,8 @@ body {
  .about {
      color: white;
      font-family: 'Arsenal', sans-serif;
+ } */
+
+ #placeholder {
+     width: 100%;
  }

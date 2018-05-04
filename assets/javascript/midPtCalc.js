@@ -28,6 +28,8 @@ function midPtCalc(ptA, ptB) {
 
     midpointCoord = { coord: {lat: midPtLat, lng: midPtLng }};
 
+
+    console.log("Mid Point Coordinate: ");
     console.log(midpointCoord);
     // return midpointCoord;
 };//End midPtCalc();
@@ -61,6 +63,14 @@ function extractCoordinates(place_idA, place_idB) {
 
             midPtCalc(coordinatesA, coordinatesB);
             searchGooglePlaces(midpointCoord);
+
+            var midPtMarker = new google.maps.Marker({
+                position:{ lat: 44.96, lng: -93.17 },
+                label: "M",
+                map: middleMap
+              });
+
+
         });
         //return response.results[0].geometry.location;;
     });

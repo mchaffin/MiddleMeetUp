@@ -48,8 +48,14 @@ function initMap() {
     calculateAndDisplayRoute(directionsService, directionsDisplay);
   };
   document.getElementById('Run').addEventListener('click', onClickHandler);
-
-}
+  var midPtMarker = new google.maps.Marker({
+    position:midpointCoord.coord,
+    map: middleMap
+  });
+  
+  console.log(midPtMarker);
+  
+}//End initMap()
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   // Get origin nd destination 
@@ -71,6 +77,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     origin: document.getElementById('address1').value,
     destination: document.getElementById('address2').value,
     travelMode: 'DRIVING'
+
   }, function (response, status) {
     if (status === 'OK') {
 
@@ -92,13 +99,15 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       extractCoordinates(place_id0, place_id1);
 
       directionsDisplay.setDirections(response);
+
+      
     } else {
       window.alert('Directions request failed due to ' + status);
     }
   });
-}
+}//End calculateAndDisplayRoute()
 
-// Fct drawMarkers consumes two arguments: an initialized map rendered map and an array of objs with containing lat/lng for each of the markers to be drawn, then executes darwing those markers on the given map
+// Fct drawMarkers consumes two arguments: an initialized map rendered map and an array of objs with containing lat/lng for each of the markers to be drawn, then executes drawing those markers on the given map
 function drawMarkers(map, markerArr) {
   
   for (var i = 0; i < markersArr.length; i++) {

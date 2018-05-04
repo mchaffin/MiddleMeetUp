@@ -11,14 +11,9 @@ Yelp
 Foursquare
 Eventbrite
 
-##This is a test
 
-Kenzie's pull request 
-This is a part of the new branch test - Kenzie
-This is a Test Pull Request for Nate
+[Link to deployed Demo](https://mchaffin.github.io/MiddleMeetUp/index.html)
 
-
-
-## Wireframe 
+## Wireframe Design
 ![wirefrane](assets/images/wireframe.png)
 

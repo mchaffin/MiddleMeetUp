@@ -18,7 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <!-- move to bottom -->
-    <script src="assets/javascript/google-dir.js"></script>
+    <!-- <script src="assets/javascript/google-dir.js"></script> -->
     <script src="assets/javascript/googleMaps.js"></script>
     <script src="assets/javascript/card_creation_function.js"></script>
     <script src="assets/javascript/midPtCalc.js"></script>
@@ -100,6 +100,11 @@
                         <button type="submit" class="button is-link is-focused is-small" id="Run">Submit</button>
                     </form>
                     <br>
+                    <div id="floating-panel">
+                        <input onclick="clearMarkers();" type=button value="Hide Markers">
+                        <input onclick="showMarkers();" type=button value="Show All Markers">
+                        <input onclick="deleteMarkers();" type=button value="Delete Markers">  
+                    </div>
                     <div id="middleMap"></div>
                 </div>
                 <!--results-->

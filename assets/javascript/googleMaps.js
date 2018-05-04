@@ -7,7 +7,7 @@ var markers = [];
 function initMap() {
     var twinCites = { lat: 44.96, lng: -93.17 };
 
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('middleMap'), {
         zoom: 12,
         center: twinCites,
         mapTypeId: 'terrain'

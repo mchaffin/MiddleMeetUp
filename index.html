@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Arsenal|Arvo" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Oswald|Raleway" rel="stylesheet">
+
 
     <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="16x16">
+    
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <!-- jQuery link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -50,20 +54,17 @@
             <h1 class="title">
                 middle meetup.
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle is-size-6">
                 find middle ground
             </h2>
         </div>
         <div class="wrapper">
         <div class="container">
-            <!-- <div class="columns">
-            <div class="column">
-              
-            </div>
-        </div> -->
+        
             <div class="columns">
                 <div class="column is-half">
-                    <h5 class="is-size-4 meet-head">Lets meet!</h5>
+                    <h5 class="is-size-3 meet-head" id="lets-meet">Lets meet!</h5>
+                    <br>
                     <form>
                         <div class="form-group">
                             <label for="myMidpt">Save Midpoint</label>
@@ -103,7 +104,8 @@
                 </div>
                 <!--results-->
                 <div class="column" id="right-side">
-                    <h2 class="is-size-4">Meetup Spotz</h2>
+                    <h2 class="is-size-3 meet-head">Common Groundz</h2>
+                    <br>
                     <div id="suggestions">
                     </div>
                 </div>

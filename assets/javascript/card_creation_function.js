@@ -35,7 +35,7 @@ function searchGooglePlaces(midpoint) {
             // //adds image
             placeDiv.append("<div class='card-image'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + result.photos[0].photo_reference + "&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4' alt='place image'></div>");
             //adds name and type
-            placeDiv.append("<div class = 'media-content'><p class='title is-6'>" + result.name + "</p><p class='subtitle is-6'>");
+            placeDiv.append("<div class = 'media-content'><p class='title is-6' id='place-card'>" + result.name + "</p><p class='subtitle is-6'>");
             //adds other content
             placeDiv.append("<div class='content'>Rating: " + result.rating + "<br>Address: " + result.formatted_address + "</div></div>");
             $("#suggestions").append(placeDiv);

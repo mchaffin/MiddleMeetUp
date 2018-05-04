@@ -11,8 +11,6 @@ firebase.initializeApp(config);
 var database = firebase.database();
 ///////// ** End Firebase Configuration **//////////////
 
-
-
 // Global variables
 var addressesArr = [];
 var markersArr = [];
@@ -22,7 +20,6 @@ var $middleMap = $("#middleMap");
 var place_id0 = "";
 var place_id1 = "";
 var midpointCoord = {};
-
 
 /// Google Directions 
 function initMap() {
@@ -47,12 +44,14 @@ function initMap() {
   };
   document.getElementById('Run').addEventListener('click', onClickHandler);
 
+  
+  // Create new default marker
   var midPtMarker = new google.maps.Marker({
     position:{ lat: 44.96, lng: -93.17 },
     label:"M",
     animation: google.maps.Animation.DROP,
     content: '<h1>Howdy!</h1>',
-    title: "I'm the Midpoint!ß",
+    title: "I'm the Midpoint!",
     map: middleMap
   });
 

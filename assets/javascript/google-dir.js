@@ -72,13 +72,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   destination = document.getElementById('address2').value;
 
   var haightAshbury = {lat: 37.769, lng: -122.446};
-  // marky goes here
-  var marky = new google.maps.Marker({
-    position: { lat: 44.96, lng: -93.17 },
-    label:"FTW",
-    animation: google.maps.Animation.DROP,
-    map: middleMap
-  });
 
   // Push origin and destination to Firebase
   database.ref().push({
@@ -96,17 +89,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
   }, function (response, status) {
     if (status === 'OK') {
-
-      // console.log("Google Directions API JSON Response: ");
-      // console.log(response);
-
-      // console.log("place_id of Address One: ");
-      // console.log(response.geocoded_waypoints["0"].place_id);
-
       place_id0 = response.geocoded_waypoints["0"].place_id;
-
-      // console.log("place_id of Address Two: ");
-      // console.log(response.geocoded_waypoints["1"].place_id);
       place_id1 = response.geocoded_waypoints["1"].place_id;
 
       //calls function to extract coordinates
@@ -119,10 +102,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       // toggle to turn off route display
       directionsDisplay.setDirections(response);
 
-      //directionsDisplay.a;
-      directionsDisplay.addMarker(haightAshbury);
-      //marky.setMap(middleMap);
-
+      // directionsDisplay
+      addMarker(haightAshbury);
+     
     } else {
       window.alert('Directions request failed due to ' + status);
     }
@@ -146,5 +128,5 @@ function addMarker(location) {
     position: location,
     map: middleMap
   });
-  //markers.push(marker);
+  //outside function
 }

@@ -12,8 +12,6 @@ var database = firebase.database();
 ///////// ** End Firebase Configuration **//////////////
 
 // Global variables
-var addressesArr = [];
-var markersArr = [];
 var origin = "";
 var destination = "";
 var $middleMap = $("#middleMap");
@@ -27,7 +25,7 @@ function initMap() {
   //Virtual Directions Service
   var directionsService = new google.maps.DirectionsService;
   //Virtual Directions Renderer
-  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var directionsDisplay = new google.maps.DirectionsRenderer; 
 
   // Create new Google Map object
   var middleMap = new google.maps.Map(document.getElementById('middleMap'),
@@ -40,7 +38,7 @@ function initMap() {
   // call this now  
   directionsDisplay.setMap(middleMap);
 
-  // // Click handler
+  // Main Click Handler
   var onClickHandler = function (event) {
     event.preventDefault();
     calculateAndDisplayRoute(directionsService, directionsDisplay);
@@ -48,23 +46,23 @@ function initMap() {
   document.getElementById('Run').addEventListener('click', onClickHandler);
 
   // Create new default marker
-  var midPtMarker = new google.maps.Marker({
-    position:{ lat: 44.96, lng: -93.17 },
-    label:"P",
-    animation: google.maps.Animation.DROP,
-    map: middleMap
-  });
+  // var midPtMarker = new google.maps.Marker({
+  //   position:{ lat: 44.96, lng: -93.17 },
+  //   label:"P",
+  //   animation: google.maps.Animation.DROP,
+  //   map: middleMap
+  // });
 
-  var infowindow = new google.maps.InfoWindow({
-    content: "<h1>Howdy!</h1><p>I'm your first CommonGround Point.</p>"
-  });
+  // var infowindow = new google.maps.InfoWindow({
+  //   content: "<h1>Howdy!</h1><p>I'm your first CommonGround Point.</p>"
+  // });
 
-  // Add event listener
-  midPtMarker.addListener('click', function() {
-    infowindow.open(middleMap, midPtMarker);
-  });
-}
-/// END FUNCTION InitMap() ///
+  // // Add event listener
+  // midPtMarker.addListener('click', function() {
+  //   infowindow.open(middleMap, midPtMarker);
+  // });
+
+} /// END FUNCTION InitMap() ///
 
 
 /// FUNCTION CALL TO Google Directions ///
@@ -72,6 +70,15 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   // Get origin and destination 
   origin = document.getElementById('address1').value;
   destination = document.getElementById('address2').value;
+
+  var haightAshbury = {lat: 37.769, lng: -122.446};
+  // marky goes here
+  var marky = new google.maps.Marker({
+    position: { lat: 44.96, lng: -93.17 },
+    label:"FTW",
+    animation: google.maps.Animation.DROP,
+    map: middleMap
+  });
 
   // Push origin and destination to Firebase
   database.ref().push({
@@ -90,24 +97,31 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   }, function (response, status) {
     if (status === 'OK') {
 
-      console.log("Google Directions API JSON Response: ");
-      console.log(response);
+      // console.log("Google Directions API JSON Response: ");
+      // console.log(response);
 
-      console.log("place_id of Address One: ");
-      console.log(response.geocoded_waypoints["0"].place_id);
+      // console.log("place_id of Address One: ");
+      // console.log(response.geocoded_waypoints["0"].place_id);
 
       place_id0 = response.geocoded_waypoints["0"].place_id;
 
-      console.log("place_id of Address Two: ");
-      console.log(response.geocoded_waypoints["1"].place_id);
+      // console.log("place_id of Address Two: ");
+      // console.log(response.geocoded_waypoints["1"].place_id);
       place_id1 = response.geocoded_waypoints["1"].place_id;
-
-      addressesArr.push(place_id0, place_id1);
 
       //calls function to extract coordinates
       extractCoordinates(place_id0, place_id1);
 
+      console.log("New Midpoint");
+      // add new marker here
+      console.log(midpointCoord);
+
+      // toggle to turn off route display
       directionsDisplay.setDirections(response);
+
+      //directionsDisplay.a;
+      directionsDisplay.addMarker(haightAshbury);
+      //marky.setMap(middleMap);
 
     } else {
       window.alert('Directions request failed due to ' + status);
@@ -116,13 +130,21 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 }//End calculateAndDisplayRoute()
 
 // FUNCTION DrawMarkers consumes two arguments: an initialized map rendered map and an array of objs with containing lat/lng for each of the markers to be drawn, then executes drawing those markers on the given map
-function drawMarkers(map, markerArr) {
-  for (var i = 0; i < markersArr.length; i++) {
-    // Add marker
-    addMarker(markersArr[i]);
-  }
-  function addMarker(props){
-    var marker = new google.maps.Marker({ position:props.coord, map:map});    
-  }
-};
+// function drawMarkers(map, markerArr) {
+//   for (var i = 0; i < markersArr.length; i++) {
+//     // Add marker
+//     addMarker(markersArr[i]);
+//   }
+//   function addMarker(props){
+//     var marker = new google.maps.Marker({ position:props.coord, map:map});    
+//   }
+// };
 /// END DrawMarkers() ///
+
+function addMarker(location) {
+  var marker = new google.maps.Marker({
+    position: location,
+    map: middleMap
+  });
+  //markers.push(marker);
+}

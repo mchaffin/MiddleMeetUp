@@ -27,7 +27,7 @@ function midPtCalc(ptA, ptB) {
 
     console.log("Mid Point Coordinate: ");
     console.log(midpointCoord);
-    // return midpointCoord;
+
 };//End midPtCalc();
 
 function extractCoordinates(place_idA, place_idB) {
@@ -37,8 +37,6 @@ function extractCoordinates(place_idA, place_idB) {
     var queryURLA = 'https://maps.googleapis.com/maps/api/geocode/json?place_id=' + place_idA + '&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
 
     var queryURLB = 'https://maps.googleapis.com/maps/api/geocode/json?place_id=' + place_idB + '&key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s';
-
-    //console.log(queryURL);
 
     //First AJAX Call
     $.ajax({
@@ -57,20 +55,23 @@ function extractCoordinates(place_idA, place_idB) {
         }).then(function (response) {
             var coordinatesB = response.results[0].geometry.location;
 
+            // does what
             midPtCalc(coordinatesA, coordinatesB);
+            // call searchGooglePlaces to fill CommonGround recommendations
             searchGooglePlaces(midpointCoord);
+            
+            console.log("EXC Midpoint");
+            console.log(midpointCoord);
 
             var midPtMarker = new google.maps.Marker({
-                position:{ lat: 44.96, lng: -93.17 },
+                position: midpointCoord.coord,
                 label: "M",
+                animation: google.maps.Animation.DROP,
                 map: middleMap
               });
-
-
         });
         //return response.results[0].geometry.location;;
     });
-
 }; // End extractCoordinates();
 
 

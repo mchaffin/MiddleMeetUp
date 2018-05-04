@@ -150,7 +150,9 @@
        letter-spacing: -1px;
       }
       
-
+      #place-card {
+        font-family: 'Oswald', sans-serif;
+      }
 
 
 

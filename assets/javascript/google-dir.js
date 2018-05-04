@@ -36,7 +36,7 @@ function initMap() {
     });
 
   // call this now  
-  directionsDisplay.setMap(middleMap);
+  //directionsDisplay.setMap(middleMap);
 
   // Main Click Handler
   var onClickHandler = function (event) {
@@ -71,7 +71,16 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   origin = document.getElementById('address1').value;
   destination = document.getElementById('address2').value;
 
-  var haightAshbury = {lat: 37.769, lng: -122.446};
+  //var haightAshbury = {lat: 37.769, lng: -122.446};
+  var marker = new google.maps.Marker({
+    position:{ lat: 44.96, lng: -93.17 },
+    label:"P",
+    animation: google.maps.Animation.DROP
+  });
+  // directionsDisplay
+  marker.setMap(middleMap);
+  //middleMap.addMarker(haightAshbury);
+
 
   // Push origin and destination to Firebase
   database.ref().push({
@@ -100,11 +109,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       console.log(midpointCoord);
 
       // toggle to turn off route display
-      directionsDisplay.setDirections(response);
-
-      // directionsDisplay
-      addMarker(haightAshbury);
-     
+      //directionsDisplay.setDirections(response);
+    
     } else {
       window.alert('Directions request failed due to ' + status);
     }
@@ -123,10 +129,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 // };
 /// END DrawMarkers() ///
 
-function addMarker(location) {
-  var marker = new google.maps.Marker({
-    position: location,
-    map: middleMap
-  });
-  //outside function
-}
+// function addMarker(location) {
+//   var marker = new google.maps.Marker({
+//     position: location,
+//     map: middleMap
+//   });
+//   //outside function
+// }

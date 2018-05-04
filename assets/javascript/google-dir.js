@@ -26,12 +26,10 @@ var midpointCoord = {};
 
 /// Google Directions 
 function initMap() {
-
   //Virtual Directions Service
   var directionsService = new google.maps.DirectionsService;
   //Virtual Directions Renderer
   var directionsDisplay = new google.maps.DirectionsRenderer;
-
 
   var middleMap = new google.maps.Map(document.getElementById('middleMap'),
 
@@ -48,14 +46,29 @@ function initMap() {
     calculateAndDisplayRoute(directionsService, directionsDisplay);
   };
   document.getElementById('Run').addEventListener('click', onClickHandler);
+
   var midPtMarker = new google.maps.Marker({
-    position:midpointCoord.coord,
+    position:{ lat: 44.96, lng: -93.17 },
+    label:"M",
+    animation: google.maps.Animation.DROP,
+    content: '<h1>Howdy!</h1>',
+    title: "I'm the Midpoint!ß",
     map: middleMap
+  });
+
+  var infowindow = new google.maps.InfoWindow({
+    content: "<h1>Howdy!</h1><p>I'm the Middle Point between Minneapolis and St. Paul MN</p>"
+  });
+
+  midPtMarker.addListener('click', function() {
+    infowindow.open(middleMap, midPtMarker);
   });
   
   console.log(midPtMarker);
   
 }//End initMap()
+
+
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   // Get origin nd destination 

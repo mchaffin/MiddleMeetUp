@@ -37,7 +37,7 @@ function searchGooglePlaces(midpoint) {
             //adds name and type
             placeDiv.append("<div class = 'media-content'><p class='title is-6' id='place-card'>" + result.name + "</p><p class='subtitle is-6'>");
             //adds other content
-            placeDiv.append("<div class='content'>Rating: " + result.rating + "<br>Address: " + result.formatted_address + "</div></div>");
+            placeDiv.append("<div class='content'>Rating: " + result.rating + "<br>Address: " + result.vicinity + "</div></div>");
             $("#suggestions").append(placeDiv);
         }
     });    

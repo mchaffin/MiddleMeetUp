@@ -26,7 +26,6 @@ function initMap() {
   var directionsService = new google.maps.DirectionsService;
   //Virtual Directions Renderer
   var directionsDisplay = new google.maps.DirectionsRenderer; 
-
   // Create new Google Map object
   var middleMap = new google.maps.Map(document.getElementById('middleMap'),
     {
@@ -45,7 +44,7 @@ function initMap() {
   };
   document.getElementById('Run').addEventListener('click', onClickHandler);
 
-  // Create new default marker
+ // Create new default marker
   // var midPtMarker = new google.maps.Marker({
   //   position:{ lat: 44.96, lng: -93.17 },
   //   label:"P",
@@ -58,7 +57,7 @@ function initMap() {
   // });
 
   // // Add event listener
-  // midPtMarker.addListener('click', function() {
+  // midPtMarker.addListener('click', funct ion() {
   //   infowindow.open(middleMap, midPtMarker);
   // });
 
@@ -71,16 +70,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   origin = document.getElementById('address1').value;
   destination = document.getElementById('address2').value;
 
-  //var haightAshbury = {lat: 37.769, lng: -122.446};
   var marker = new google.maps.Marker({
     position:{ lat: 44.96, lng: -93.17 },
     label:"P",
     animation: google.maps.Animation.DROP
   });
-  // directionsDisplay
-  marker.setMap(middleMap);
-  //middleMap.addMarker(haightAshbury);
-
 
   // Push origin and destination to Firebase
   database.ref().push({

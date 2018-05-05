@@ -18,7 +18,12 @@ function initMap() {
     // Virtual Directions Service
     var directionsService = new google.maps.DirectionsService;
     // Virtual Directions Renderer
-    var directionsDisplay = new google.maps.DirectionsRenderer; 
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    // Virtual Geocoder
+    var geocoder = new google.maps.Geocoder;
+    // Virtual InfoWindow
+    var infowindow = new google.maps.InfoWindow;
+    
     // main event listener - click handler
     var onClickHandler = function (event) {
         event.preventDefault();
@@ -76,6 +81,7 @@ function deleteMarkers() {
     markers = [];
 }
 
+// Calculate and display route - not using driving directions here
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     // Get origin and destination 
     origin = document.getElementById('address1').value;
@@ -99,3 +105,26 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       }
     });
   }
+
+// Get geocode of a place ID.
+function geocodePlaceId(geocoder, map, infowindow) {
+    var placeId = document.getElementById('place-id').value;
+    geocoder.geocode({'placeId': placeId}, function(results, status) {
+        if (status === 'OK') {
+            if (results[0]) {
+                map.setZoom(11);
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+                infowindow.setContent(results[0].formatted_address);
+                infowindow.open(map, marker);
+            } else {
+                window.alert('No results found');
+            }
+        } else {
+        window.alert('Geocoder failed due to: ' + status);
+        }
+    });
+}

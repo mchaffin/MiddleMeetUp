@@ -44,7 +44,7 @@ function initMap() {
     // This event listener will call onClickHandler() when Run element ID is clicked.
     document.getElementById('Run').addEventListener('click', onClickHandler);
     // Add other click events here.
-
+    // document.getElementById('place-id').addEventListener('click', geocodePlaceId);
     // Adds a marker at the center of the map.
     addMarker(twinCites);
 }
@@ -107,8 +107,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   }
 
 // Get geocode of a place ID.
-function geocodePlaceId(geocoder, map, infowindow) {
+function geocodePlaceId(geocoder, map, infowindow, placeid) {
+    // need to get Place ID from Google Places
     var placeId = document.getElementById('place-id').value;
+
     geocoder.geocode({'placeId': placeId}, function(results, status) {
         if (status === 'OK') {
             if (results[0]) {

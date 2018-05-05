@@ -30,7 +30,7 @@ function searchGooglePlaces(midpoint) {
             var placeDiv = $("<div class='card'>");
             
             // adds image
-            placeDiv.append("<div class='card-image' id='place-id' value="+result.place_id+"><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + result.photos[0].photo_reference + "&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4' alt='place image'></div>");
+            placeDiv.append("<div class='card-image' id='place-id' value="+result.place_id+"><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + result.photos[0].photo_reference + "&key=AIzaSyCcvExBw5IUZk2RumQxXaQffjf8UQNwVC8' alt='place image'></div>");
             // adds name and type
             placeDiv.append("<div class='media-content'><p class='title is-6' id='place-card'>" + result.name + "</p><p class='subtitle is-6'>");
             // adds other content

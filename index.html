@@ -14,86 +14,86 @@
 </head>
 
 <body>
-        <!--navbar-->
-        <nav class="nav1">
-            <img src="assets/images/meet.jpg" alt="Under the Sun" id="meet-img">
-            <ul>
-                <li id="left"><a class="active" href="index.html">mm.</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="middlePtsPg.html">COMMUNITY</a></li>
-                <li><a class="active" href="index.html">HOME</a></li>
-            </ul>
-        </nav>
+    <!--navbar-->
+    <nav class="nav1">
+        <img src="assets/images/meet.jpg" alt="Under the Sun" id="meet-img">
+        <ul>
+            <li id="left"><a class="active" href="index.html">mm.</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="middlePtsPg.html">COMMUNITY</a></li>
+            <li><a class="active" href="index.html">HOME</a></li>
+        </ul>
+    </nav>
 
-        <div class="img-text">
-            <h1 class="title">
-                middle meetup.
-            </h1>
-            <h2 class="subtitle is-size-6">
-                find middle ground
-            </h2>
-        </div>
-        <div class="wrapper">
-        <div class="container">
-        
-            <div class="columns">
-                <div class="column is-half">
-                    <h5 class="is-size-3 meet-head" id="lets-meet">Lets meet!</h5>
-                    <br>
-                    <form>
-                        <div class="form-group">
-                            <label for="myMidpt">Save Midpoint</label>
-                            <input class="input is-small" type="text" id="myMidpt" placeholder="My Midpoint">
-                        </div>
-                        <div class="form-group">
-                            <label for="address1">Address One:</label>
-                            <input class="input is-small" type="text" id="address1">
-                        </div>
-                        <div class="form-group">
-                            <label for="address2">Address Two:</label>
-                            <input class="input is-small" type="text" id="address2">
-                        </div>
-                        <div class="form-group" id="description">
-                            <label for="description">Description</label>
-                            <input class="input is-small" type="text" id="midPtDescription" placeholder="My midpoint to meet Liam N.">
-                        </div>
-                        <br>
-                        <div id="categories">
-                            <div class="select is-small">
-                                <select>
-                                    <option>Choose Category</option>
-                                    <option>Park</option>
-                                    <option>Restaurant</option>
-                                    <option>Bar</option>
-                                    <option>Night Club</option>
-                                    <option>Casino</option>
-                                    <option>Courthouse</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br>
-                        <button type="submit" class="button is-link is-focused is-small" id="Run">Submit</button>
-                    </form>
-                    <br>
-                    <div id="floating-panel">
-                        <input onclick="clearMarkers();" type=button value="Hide Markers">
-                        <input onclick="showMarkers();" type=button value="Show All Markers">
-                        <input onclick="deleteMarkers();" type=button value="Delete Markers">  
+    <div class="img-text">
+        <h1 class="title">
+            middle meetup.
+        </h1>
+        <h2 class="subtitle is-size-6">
+            find middle ground
+        </h2>
+    </div>
+    <div class="wrapper">
+    <div class="container">
+    
+        <div class="columns">
+            <div class="column is-half">
+                <h5 class="is-size-3 meet-head" id="lets-meet">Lets meet!</h5>
+                <br>
+                <form>
+                    <div class="form-group">
+                        <label for="myMidpt">Save Midpoint</label>
+                        <input class="input is-small" type="text" id="myMidpt" placeholder="My Midpoint">
                     </div>
-                    <div id="middleMap"></div>
+                    <div class="form-group">
+                        <label for="address1">Address One:</label>
+                        <input class="input is-small" type="text" id="address1">
+                    </div>
+                    <div class="form-group">
+                        <label for="address2">Address Two:</label>
+                        <input class="input is-small" type="text" id="address2">
+                    </div>
+                    <div class="form-group" id="description">
+                        <label for="description">Description</label>
+                        <input class="input is-small" type="text" id="midPtDescription" placeholder="My midpoint to meet Liam N.">
+                    </div>
+                    <br>
+                    <div id="categories">
+                        <div class="select is-small">
+                            <select>
+                                <option>Choose Category</option>
+                                <option>Park</option>
+                                <option>Restaurant</option>
+                                <option>Bar</option>
+                                <option>Night Club</option>
+                                <option>Casino</option>
+                                <option>Courthouse</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="button is-link is-focused is-small" id="Run">Submit</button>
+                </form>
+                <br>
+                <div id="floating-panel">
+                    <input onclick="clearMarkers();" type=button value="Hide Markers">
+                    <input onclick="showMarkers();" type=button value="Show All Markers">
+                    <input onclick="deleteMarkers();" type=button value="Delete Markers">  
                 </div>
-                <!--results-->
-                <div class="column" id="right-side">
-                    <h2 class="is-size-3 meet-head">Common Groundz</h2>
-                    <br>
-                    <div id="suggestions">
-                    </div>
+                <div id="middleMap"></div>
+            </div>
+            <!--results-->
+            <div class="column" id="right-side">
+                <h2 class="is-size-3 meet-head">Common Groundz</h2>
+                <br>
+                <div id="suggestions">
                 </div>
             </div>
         </div>
+    </div>
 
-        <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
-        <div class="push"></div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+    <div class="push"></div>
     </div>
     <footer class="footer">
         <div class="container">
@@ -114,7 +114,7 @@
 <!-- <script src="assets/javascript/google-dir.js"></script> -->
 <script src="assets/javascript/googleMaps.js"></script>
 <script src="assets/javascript/card_creation_function.js"></script>
-<script src="assets/javascript/midPtCalc.js"></script>
+<script src="assets/javascript/midPoint.js"></script>
 
 <!-- Google API callback=initMap -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s&callback=initMap"></script>

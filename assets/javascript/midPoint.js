@@ -77,8 +77,6 @@ function extractCoordinates(place_idA, place_idB) {
                 dateAdded: firebase.database.ServerValue.TIMESTAMP
               });
 
-
-
             // call searchGooglePlaces to fill CommonGround recommendations
             searchGooglePlaces(midpointCoord);
             

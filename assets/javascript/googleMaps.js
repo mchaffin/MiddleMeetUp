@@ -23,7 +23,6 @@ function initMap() {
     var onClickHandler = function (event) {
         event.preventDefault();
         calculateAndDisplayRoute(directionsService, directionsDisplay);
-        console.log("got here");
     };
 
     map = new google.maps.Map(document.getElementById('middleMap'), {

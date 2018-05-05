@@ -77,8 +77,6 @@ function deleteMarkers() {
     markers = [];
 }
 
-/// NEW CODE HERE ///
-
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     // Get origin and destination 
     origin = document.getElementById('address1').value;

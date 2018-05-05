@@ -1,52 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Oswald|Raleway" rel="stylesheet">
-
     <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="16x16">
     
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <!-- jQuery link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <!-- move to bottom !! -->
-    <!-- <script src="assets/javascript/google-dir.js"></script> -->
-    <script src="assets/javascript/googleMaps.js"></script>
-    <script src="assets/javascript/card_creation_function.js"></script>
-    <script src="assets/javascript/midPtCalc.js"></script>
-
-    <!-- end of the url &callback=initMap -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s&callback=initMap"></script>
     <title>Middle Meetup Map</title>
 </head>
 
 <body>
- 
         <!--navbar-->
         <nav class="nav1">
             <img src="assets/images/meet.jpg" alt="Under the Sun" id="meet-img">
             <ul>
-                <li id="left">
-                    <a class="active" href="index.html">mm.</a>
-                </li>
-                <li>
-                    <a href="about.html">ABOUT</a>
-                </li>
-
-                <li>
-                    <a href="middlePtsPg.html">COMMUNITY</a>
-                </li>
-                <li>
-                    <a class="active" href="index.html">HOME</a>
-                </li>
+                <li id="left"><a class="active" href="index.html">mm.</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="middlePtsPg.html">COMMUNITY</a></li>
+                <li><a class="active" href="index.html">HOME</a></li>
             </ul>
         </nav>
 
@@ -117,7 +92,6 @@
             </div>
         </div>
 
-
         <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
         <div class="push"></div>
     </div>
@@ -130,6 +104,20 @@
             </div>
         </div>
     </footer>
+
+<!-- Firebase load -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<!-- JQuery load -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Javascript load -->
+<!-- <script src="assets/javascript/google-dir.js"></script> -->
+<script src="assets/javascript/googleMaps.js"></script>
+<script src="assets/javascript/card_creation_function.js"></script>
+<script src="assets/javascript/midPtCalc.js"></script>
+
+<!-- Google API callback=initMap -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-WAHRv2HNx3C-2GwVypyKRA0-YujTH9s&callback=initMap"></script>
 
 </body>
 

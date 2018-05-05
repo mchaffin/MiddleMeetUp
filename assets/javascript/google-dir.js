@@ -77,11 +77,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   });
 
   // Push origin and destination to Firebase
-  database.ref().push({
-    origin: origin,
-    destination: destination,
-    dateAdded: firebase.database.ServerValue.TIMESTAMP
-  });
+  // database.ref().push({
+  //   origin: origin,
+  //   destination: destination,
+  //   dateAdded: firebase.database.ServerValue.TIMESTAMP
+  // });
 
   //Utilizes .route in directionsService to perform AJAX call 
   directionsService.route({

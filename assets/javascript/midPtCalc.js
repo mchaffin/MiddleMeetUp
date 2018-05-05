@@ -1,3 +1,16 @@
+///////// ** Firebase Configuration **//////////////
+var config = {
+    apiKey: "AIzaSyBIaYZCktWCryF8cMhxK-XUNzIJibtquU0",
+    authDomain: "middlemeetup-a2868.firebaseapp.com",
+    databaseURL: "https://middlemeetup-a2868.firebaseio.com",
+    projectId: "middlemeetup-a2868",
+    storageBucket: "middlemeetup-a2868.appspot.com",
+    messagingSenderId: "482753535895"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+  ///////// ** End Firebase Configuration **//////////////
+
 //midPtCalc(): consumes two geographical points as objects with respective lats and lngs, returns a midpoint with a lat and lng 
 /*PseudoCode For MidPoint Calculation given N number of points with latitudes and longitudes */
 /**Simple Average of Input Points */
@@ -55,8 +68,17 @@ function extractCoordinates(place_idA, place_idB) {
         }).then(function (response) {
             var coordinatesB = response.results[0].geometry.location;
 
-            // does what
+            // Calc midpt given coordinates from AJAX calls
             midPtCalc(coordinatesA, coordinatesB);
+
+            //Push Calculated Midt coords to Firebase for storage
+            database.ref().push({
+                midPt: midpointCoord.coord,
+                dateAdded: firebase.database.ServerValue.TIMESTAMP
+              });
+
+
+
             // call searchGooglePlaces to fill CommonGround recommendations
             searchGooglePlaces(midpointCoord);
             

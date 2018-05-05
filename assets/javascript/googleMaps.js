@@ -9,7 +9,6 @@ var destination = "";               // inital destination location - geolocation
 var $middleMap = $("#middleMap");   // Jquery var for main map selector
 var place_id0 = "";                 // Google GeoPlace0
 var place_id1 = "";                 // Google GeoPlace1
-var type = "";                      // Google type
 var midpointCoord = {};             // mid-point
 var geocoder;                       // geocoder
 var infowindow;                     // infowindow
@@ -30,8 +29,6 @@ function initMap() {
     // main event listener - click handler
     var onClickHandler = function (event) {
         event.preventDefault();
-        type = $("select#type").val();
-        console.log(type);
         calculateAndDisplayRoute(directionsService, directionsDisplay);
     };
 

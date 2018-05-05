@@ -10,6 +10,8 @@ var $middleMap = $("#middleMap");   // Jquery var for main map selector
 var place_id0 = "";                 // Google GeoPlace0
 var place_id1 = "";                 // Google GeoPlace1
 var midpointCoord = {};             // mid-point
+var geocoder;                       // geocoder
+var infowindow;                     // infowindow
 
 // Initialze map and wait for click
 function initMap() {
@@ -20,9 +22,9 @@ function initMap() {
     // Virtual Directions Renderer
     var directionsDisplay = new google.maps.DirectionsRenderer;
     // Virtual Geocoder
-    var geocoder = new google.maps.Geocoder;
+    geocoder = new google.maps.Geocoder;
     // Virtual InfoWindow
-    var infowindow = new google.maps.InfoWindow;
+    infowindow = new google.maps.InfoWindow;
     
     // main event listener - click handler
     var onClickHandler = function (event) {
@@ -44,7 +46,7 @@ function initMap() {
     // This event listener will call onClickHandler() when Run element ID is clicked.
     document.getElementById('Run').addEventListener('click', onClickHandler);
     // Add other click events here.
-    // document.getElementById('place-id').addEventListener('click', geocodePlaceId);
+    
     // Adds a marker at the center of the map.
     addMarker(twinCites);
 }
@@ -107,11 +109,12 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   }
 
 // Get geocode of a place ID.
-function geocodePlaceId(geocoder, map, infowindow, placeid) {
+function geocodePlaceId(geocoder, map, infowindow, placeId) {
     // need to get Place ID from Google Places
-    var placeId = document.getElementById('place-id').value;
-
+   // var placeId = document.getElementById('place-id').value;
+   console.log("Placeid: "+placeId);
     geocoder.geocode({'placeId': placeId}, function(results, status) {
+        console.log("Status: "+status);
         if (status === 'OK') {
             if (results[0]) {
                 map.setZoom(11);

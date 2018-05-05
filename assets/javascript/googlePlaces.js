@@ -42,12 +42,12 @@ function searchGooglePlaces(midpoint) {
  }
 
  //Add on click event to all card images
-    $("#suggestions").on("click", ".card", function() {
-        event.preventDefault();
-        console.log(this);
-        var placeid = $(this).find("#place-id").attr("value")
-        geocodePlaceId(geocoder, map, infowindow, placeId);
-    });    
+$("#suggestions").on("click", ".card", function() {
+    event.preventDefault();
+    console.log(this);
+    var placeId = $(this).find("#place-id").attr("value")
+    geocodePlaceId(geocoder, map, infowindow, placeId);
+});    
 
 window.onscroll = function() {scrollFunction()};
 

@@ -1,8 +1,19 @@
-function searchGooglePlaces(searchString) {
+// jQuery function to safely call URL without CORS Errors
+jQuery.ajaxPrefilter(function(options) {
+    if (options.crossDomain && jQuery.support.cors) {
+        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+  });
+
+function searchGooglePlaces(midpoint) {
     //var searchString = searchString;
-    // Constructing a queryURL using the animal name
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    searchString + "&api_key=dc6zaTOxFJmzC&limit=10";
+    // Constructing a queryURL using the search term 
+    var lat = midpointCoord.coord.lat;
+    var lon = midpointCoord.coord.lng;
+
+    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=10000&type=bar&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4";
+
+  
 
     // Performing an AJAX request with the queryURL
     $.ajax({
@@ -15,28 +26,34 @@ function searchGooglePlaces(searchString) {
 
         console.log(response);
         // storing the data from the AJAX request in the results variable
-        var results = response.data;
+        var results = response.results;
 
-        // Looping through each result item
-        for (var i = 0; i < results.length; i++) {
 
-        // Creating and storing a div tag
-        var giphyDiv = $("<div>");
-
-        // Creating a paragraph tag with the result item's rating
-        var p = $("<p>").text("Rating: " + results[i].rating);
-
-        // Creating and storing an image tag
-        var giphyImage = $("<img>");
-        // Setting the src attribute of the image to a property pulled off the result item
-        giphyImage.attr("src", results[i].images.fixed_height.url);
-
-        // Appending the paragraph and image tag to the animalDiv
-        giphyDiv.append(p);
-        giphyDiv.append(giphyImage);
-
-        // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
-        $("#gifs-appear-here").prepend(giphyDiv);
+        for (var j = 0; j < results.length; j++){
+            var result = results[j];
+            var placeDiv = $("<div class='card'>");
+            
+            // //adds image
+            placeDiv.append("<div class='card-image'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + result.photos[0].photo_reference + "&key=AIzaSyD0QSfHIgzXIakE7DMJpdq18X6A8X4OHy4' alt='place image'></div>");
+            //adds name and type
+            placeDiv.append("<div class = 'media-content'><p class='title is-6' id='place-card'>" + result.name + "</p><p class='subtitle is-6'>");
+            //adds other content
+            placeDiv.append("<div class='content'>Rating: " + result.rating + "<br>Address: " + result.vicinity + "</div></div>");
+            $("#suggestions").append(placeDiv);
         }
     });    
  }
+
+ window.onscroll = function() {scrollFunction()};
+
+ function scrollFunction() {
+     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         document.getElementById("myBtn").style.display = "block";
+     } else {
+         document.getElementById("myBtn").style.display = "none";
+     }
+ }
+ function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0; 
+}
